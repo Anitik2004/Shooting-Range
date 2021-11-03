@@ -6,9 +6,9 @@ var gunImg,bubbleImg, bulletImg, blastImg, backBoardImg;
 var redBubbleGroup, redBubbleGroup, bulletGroup;
 
 
-var life =3;
+var life=3;
 var score=0;
-var gameState=1
+var gameState=1;
 
 function preload(){
   gunImg = loadImage("gun1.png")
@@ -21,19 +21,19 @@ function preload(){
 function setup() {
   createCanvas(800, 800);
 
-  backBoard= createSprite(50, width/2, 100,height);
+  backBoard = createSprite(50, width/2, 100,height);
   backBoard.addImage(backBoardImg)
   
-  gun= createSprite(100, height/2, 50,50);
+  gun = createSprite(100, height/2, 50,50);
   gun.addImage(gunImg)
   gun.scale=0.2
   
-  bulletGroup = createGroup();   
+  bulletGroup = createGroup();
   blueBubbleGroup = createGroup();   
   redBubbleGroup = createGroup();   
   
-  heading= createElement("h1");
-  scoreboard= createElement("h1");
+  heading = createElement("h1");
+  scoreboard = createElement("h1");
 }
 
 function draw() {
@@ -68,18 +68,6 @@ function draw() {
     
     if (redBubbleGroup.collide(backBoard)) {
       handleGameover(redBubbleGroup);
-    }
-    
-    if(blueBubbleGroup.collide(bulletGroup)){
-      handleBubbleCollision(blueBubbleGroup);
-    }
-
-    if(blueBubbleGroup.collide(bulletGroup)){
-      handleBubbleCollision();
-    }
-    
-    if(blueBubbleGroup.collide()){
-      handleBubbleCollision(blueBubbleGroup);
     }
     
     if(blueBubbleGroup.collide(bulletGroup)){
@@ -130,14 +118,14 @@ function handleBubbleCollision(bubbleGroup){
     blast= createSprite(bullet.x+60, bullet.y, 50,50);
     blast.addImage(blastImg)
 
-    blast= sprite(bullet.x+60, bullet.y, 50,50);
-    blast.addImage(blastImg)
+    /*blast= sprite(bullet.x+60, bullet.y, 50,50);
+    blast.addImage(blastImg)*/
 
-    blast= createSprite(bullet.x+60, bullet.y, 50,50);
-    blast.add(blastImg)
+    /*blast= createSprite(bullet.x+60, bullet.y, 50,50);
+    blast.add(blastImg)*/
 
-    blast= createSprite(bullet.x+60, bullet.y, 50,50);
-    image(blastImg)
+    /*blast= createSprite(bullet.x+60, bullet.y, 50,50);
+    image(blastImg)*/
     
     blast.scale=0.3
     blast.life=20
